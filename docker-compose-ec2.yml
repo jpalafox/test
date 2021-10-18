@@ -96,7 +96,8 @@ services:
     image: ghcr.io/spruik/libre-core:0.2.0
     restart: always
     environment:
-      - LIBRE_CONFIG_FILE=/etc/config/config.json
+      - LIBRE_CONFIG_FILE=/home/ec2-user/getting-started/Standalone/libre-core/config
+    depends_on:/config.json
     volumes:
       - ./libre-core/config:/home/ec2-user/getting-started/Standalone/libre-core/config
     depends_on:
@@ -109,7 +110,7 @@ services:
     image: ghcr.io/spruik/graphql-pubsub:0.0.3
     restart: always
     environment:
-      - LIBRE_CONFIG_FILE=/etc/config/config.json
+      - LIBRE_CONFIG_FILE=/home/ec2-user/getting-started/Standalone/graphql-pubsub/config/config.json
     volumes:
       - ./graphql-pubsub/config:/home/ec2-user/getting-started/Standalone/graphql-pubsub/config
     depends_on:
@@ -124,7 +125,7 @@ services:
     image: ghcr.io/spruik/libre-workflow-pubsub:0.0.1
     restart: always
     environment:
-      - LIBRE_CONFIG_FILE=/etc/config/config.json
+      - LIBRE_CONFIG_FILE=/home/ec2-user/getting-started/Standalone/libre-workflow-pubsub/config.json
     volumes:
       - ./libre-workflow-pubsub/config:/home/ec2-user/getting-started/Standalone/libre-workflow-pubsub/config
     depends_on:
@@ -234,7 +235,7 @@ services:
     image: ghcr.io/spruik/libre-edge-agent:0.2.6
     restart: always
     environment:
-      - LIBRE_CONFIG_FILE=/etc/config/config.json
+      - LIBRE_CONFIG_FILE=/home/ec2-user/getting-started/Standalone/libre-edge-agent/config/config.json
     volumes:
       - ./libre-edge-agent/config://home/ec2-user/getting-started/Standalone/libre-edge-agent/config
     depends_on:
