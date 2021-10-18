@@ -83,7 +83,7 @@ services:
       - INFLUX_BUCKET=Libre
       - INFLUX_URL=http://influxdb:8086
     volumes:
-      - ./libre-server/config:/etc/config
+      - ./libre-server/config://home/ec2-user/getting-started/Standalone/libre-server/config
     depends_on:
       alpha:
         condition: service_healthy
